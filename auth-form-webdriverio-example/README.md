@@ -31,8 +31,6 @@ opened in your browser.
     * AUTH_USER_NAME = 
     * TEST_HOST = 
     * RESET_CREDINTAILS_URL = 
-    * TERM_OF_SERVICE_URL = 
-    * PRIVACY_POLICY_URL = 
     * REGISTRATION_URL = 
     * HOST = localhost
     
