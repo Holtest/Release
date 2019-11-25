@@ -2,3 +2,4 @@ node_modules
 allure-*
 .env
 img_pat
+selenium-server-standalone*

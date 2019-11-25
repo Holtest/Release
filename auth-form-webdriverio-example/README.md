@@ -23,7 +23,8 @@ opened in your browser.
 * **util/** - additional helpers.
     * **config.js** – configuration file where specified base options for tests.
     * **browser.js** - browser provider for your tests.
-* **img_pat/** - images to compare.
+* **img-pat/** - images to compare.
+* **allure-results/** - test results.
 * **.env** - environment variables with personal data:
     * AUTH_USER = 
     * AUTH_USER_PASSWORD = 

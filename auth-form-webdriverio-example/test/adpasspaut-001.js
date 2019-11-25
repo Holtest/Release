@@ -1,5 +1,6 @@
 /** TODO
  * 1. Consider chat icon.
+ * 2. To move the path in settings.
  * 
  */
 
