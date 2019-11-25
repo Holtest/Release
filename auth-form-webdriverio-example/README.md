@@ -5,7 +5,7 @@ Form authorization test example with Mocha&Webdriver.io&Allure
 
 1. Install [node.js version 8+](https://nodejs.org/). This project uses modern Javascript features, that will not work in older versions.
 2. Install npm.
-3. Clone this repository `git clone git@github.com:webdriver-examples/auth-form-webdriverio-example.git && cd auth-form-webdriverio-example`.
+3. Clone this repository `git clone git@github.com:github.com/Holtest/webdriver-examples.git && cd webdriver-examples`. 
 4. Install dependencies `npm install`.
 5. Run selenium server `npx selenium-standalone start`.
 6. Run tests via `npm test`.
