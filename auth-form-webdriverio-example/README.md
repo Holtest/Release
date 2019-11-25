@@ -15,15 +15,16 @@ opened in your browser.
 ## Project structure
 
 * **test/** – test files. Our setup uses [Mocha].
-    * **adpasspaut-001.js** – test with screen diff
-    * **adpasspaut-002.js** – test links
-    * **adpasspaut-003.js** – test auth
-    * **adpasspaut-004.js** – test err message
-    * **adpasspaut-005.js** – test capcha err message capchs
-* **util/** - additional helpers
-    * **config.js** – configuration file where specified base options for tests
-    * **browser.js** - browser provider for your tests
-* **.env** - environment variables with personal data
+    * **adpasspaut-001.js** – test with screen diff.
+    * **adpasspaut-002.js** – test links.
+    * **adpasspaut-003.js** – test auth.
+    * **adpasspaut-004.js** – test err message.
+    * **adpasspaut-005.js** – test capcha err message capchs.
+* **util/** - additional helpers.
+    * **config.js** – configuration file where specified base options for tests.
+    * **browser.js** - browser provider for your tests.
+* **img_pat/** - images to compare.
+* **.env** - environment variables with personal data:
     * AUTH_USER = 
     * AUTH_USER_PASSWORD = 
     * AUTH_USER_NAME = 
