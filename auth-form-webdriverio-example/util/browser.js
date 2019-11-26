@@ -29,7 +29,7 @@ const config = require("./config");
 
       // Shut down browser
       afterEach(() => {
-        //return browser.end();
+        return browser.end();
       });
     });
   };
