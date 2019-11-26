@@ -12,10 +12,10 @@ const config = require("./config");
 //   'name'
 //  )
 //
-try{
+//try{
   module.exports = function describeWithBrowser(name, callback, body) {
     let browser;
-    describe(name, async () => {
+    describe(name,  () => {
       // As we using beforeEach here, new browser will be received for every test case
       beforeEach(async () => {
         browser = webdriverio.remote(config.selenium);
@@ -29,13 +29,13 @@ try{
 
       // Shut down browser
       afterEach(() => {
-        return browser.end();
+        //return browser.end();
       });
     });
   };
-}
+//}
 // Show errors
-catch (error) {
-  console.error(error);
-};
+//catch (error) {
+  //console.error(error);
+//};
 

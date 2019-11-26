@@ -1,54 +1,51 @@
 /** TODO
  * 1. Consider chat icon.
- * 2. To move the path in settings.
- * 
+  * 
  */
 
 "use strict";
 
-const { expect } = require("chai");
+const assert = require('assert');
 const config = require("../util/config");
+const params = config.testing;
 const describeWithBrowser = require("../util/browser");
 const fs = require('fs');
+//package for compare images
 var looksSame = require('looks-same');
 const path = require('path');
 //image to compare
-const imagePath = (name) => path.join('./img_pat', name);
+const imagePath = (name) => path.join(params.imageTemplatePath, name);
 
 let browser;
 
 describeWithBrowser(
-   "Passport",
-  
+  "Passport",
+
   b => (browser = b),
   () => {
-    
-    // Whenever we will call this function, it will be displayed in the report
-    const screenshot = allure.createStep("saveScreenshot", async name => {
-      const res = await browser.screenshot();
-      // Webdriver.io produces values as base64-encoded string. Allure expects either plain text
-      // string or Buffer. So, we are decoding our value, using constructor of built-in Buffer object
-      allure.createAttachment(name, new Buffer.from(res.value, "base64"));
-    });
-      
+
     it("Form view", async () => {
 
-        const res = await browser.screenshot();
-        const actImgBuff = new Buffer.from(res.value, "base64");
-        const expImg = fs.readFileSync(imagePath('aut_m.png'));
+      const expImgSrc = await browser.screenshot();
+      const actImgBuff = new Buffer.from(expImgSrc.value, params.encodingType);
+      const expImg = fs.readFileSync(imagePath(params.templAutFormImageName));
 
-        await looksSame.createDiff({
-            reference: expImg,
-            current: actImgBuff
-          }, (error, buffer) => {
-            allure.createAttachment("diff.png", buffer);
-            looksSame(expImg, actImgBuff, {strict: true}, (err, {equal}) => {
-                    expect(equal).to.equal(true);
-                });
-          });
-        await allure.createAttachment("actual.png", actImgBuff);
-        await allure.createAttachment("expected.png", expImg);  
-     
+      // create diff expect and actual screen
+      await looksSame.createDiff({
+        reference: expImg,
+        current: actImgBuff
+      }, (error, buffer) => {
+        allure.createAttachment("diff.png", buffer);
+        looksSame(expImg, actImgBuff, {strict: true}, (err, {equal}) => {
+              //!!!allure does't catch an exception
+              assert.equal(equal, true);
+            });
+      });
+      //attach actual image to report
+      await allure.createAttachment(params.templAutFormActualImageName, actImgBuff);
+      //attach actual image to report
+      await allure.createAttachment(params.templAutFormExpectedImageName, expImg);
+
     });
 
 

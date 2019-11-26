@@ -15,6 +15,13 @@ const user = process.env.AUTH_USER;
 const imgPatPath = process.env.IMG_PAT_PATH;
 const host = process.env.HOST;
 
+const imageTemplatePath = "./img_pat";
+const templAutFormImageName = "aut_m.png";
+const templAutFormActualImageName = "actual.png";
+const templAutFormExpectedImageName = "expected.png";
+const templAutFormDiffImageName = "expected.png";
+const encodingType = "base64";
+
 const userSelector = "#username";
 const passwordSelector = "#password";
 const menuExitSelector = "=Выйти";
@@ -26,7 +33,7 @@ const resetCreditansLabelSelector = "div=Восстановление парол
 const registrationSelector = "a=Регистрация";
 const registrationUrl = process.env.REGISTRATION_URL;
 const termsUrl = process.env.TERM_OF_SERVICE_URL;
-const termsLocator = "a=Пользовательского соглашения";
+const termsSelector = "a=Пользовательского соглашения";
 const termsLabelSelector = "h1=Уважаемые абоненты";
 const errorWrongUserPassSelector = ".kc-feedback-text=Неправильное имя пользователя или пароль.";
 const errorCapchaSelector = ".kc-feedback-text=Неверно введен текст с картинки";
@@ -36,7 +43,6 @@ const errorCapchaSelector = ".kc-feedback-text=Неверно введен те�
 // we can call this convenient class:
 //
 //  "site: "new TestSite('http://github.com');
-//  site.organization('test') // will return organization URL
 //
 class TestSite {
   constructor(baseUrl) {
@@ -71,10 +77,16 @@ module.exports = {
     "registrationSelector" : registrationSelector,
     "registrationUrl" : registrationUrl,
     "termsUrl" : termsUrl,
-    "termsLocator" : termsLocator,
+    "termsSelector" : termsSelector,
     "termsLabelSelector" : termsLabelSelector,
     "errorWrongUserPassSelector" : errorWrongUserPassSelector,
-    "errorCapchaSelector" : errorCapchaSelector
+    "errorCapchaSelector" : errorCapchaSelector,
+    "imageTemplatePath" : imageTemplatePath,
+    "templAutFormImageName" : templAutFormImageName,
+    "templAutFormActualImageName" : templAutFormActualImageName,
+    "templAutFormExpectedImageName" : templAutFormExpectedImageName,
+    "templAutFormDiffImageName" : templAutFormDiffImageName,
+    "encodingType" : encodingType
   },
   makeRandomString :  (length) => {
     var result           = '';

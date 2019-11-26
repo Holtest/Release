@@ -6,7 +6,7 @@
 
 const config = require("../util/config");
 const describeWithBrowser = require("../util/browser");
-const assert = require('assert')
+const assert = require('assert');
 const params = config.testing;
 
 let browser;
@@ -27,7 +27,7 @@ let browser;
               allure.createAttachment("Reset Creditans", new Buffer.from(res.value, "base64"))            
             })
             .getUrl().then(url => {
-              assert.equal(url, params.resetCreditansUrl)
+              assert.equal(url, params.resetCreditansUrl);
             })
             .back()
             .waitForExist(params.registrationSelector)
