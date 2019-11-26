@@ -6,8 +6,8 @@ if (result.error) {
 }
 
 const textSelector = "=";
-const idSelector = "#";
-const classSelector = ".";
+//const idSelector = "#";
+//const classSelector = ".";
 
 const testHost = process.env.TEST_HOST;
 const password = process.env.AUTH_USER_PASSWORD;
@@ -61,7 +61,7 @@ module.exports = {
         browserName: "firefox" 
       }
   },
-
+  // test params
   testing: {   
     "imgPatPath" : imgPatPath,
     "user" : user,
@@ -88,6 +88,7 @@ module.exports = {
     "templAutFormDiffImageName" : templAutFormDiffImageName,
     "encodingType" : encodingType
   },
+  // generates a random string of the specified length
   makeRandomString :  (length) => {
     var result           = '';
     var characters       = "АаБбВвГгДдЕеЁёЖжЗзИиЙйКкЛлМмНнОоПпРрСсТтУуФфХхЦцЧчШшЩщЪъЫыЬьЭэЮюЯяABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789/!@#$%^&*()-=_+.'/|`";

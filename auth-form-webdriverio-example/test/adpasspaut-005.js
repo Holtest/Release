@@ -19,6 +19,7 @@ let browser;
 
           it("Show error when capcha wrong", async () => { 
             await browser
+               // Fill in our form fields with random text
               .setValue(params.userSelector, config.makeRandomString(15))
               .setValue(params.passwordSelector, config.makeRandomString(15))  
               .waitForExist(params.submitButtonSelector)

@@ -19,7 +19,8 @@ let browser;
     () => {
     
         it("Form links: resetCreditans&registration", async () => { 
-          await browser          
+          await browser
+            // check resetCreditans link   
             .waitForExist(params.resetCreditansSelector)
             .click(params.resetCreditansSelector)
             .waitForExist(params.resetCreditansLabelSelector)
@@ -30,6 +31,7 @@ let browser;
               assert.equal(url, params.resetCreditansUrl);
             })
             .back()
+            // check registration link 
             .waitForExist(params.registrationSelector)
             .click(params.registrationSelector)
             .screenshot().then(res => {
