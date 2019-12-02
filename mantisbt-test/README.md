@@ -27,7 +27,7 @@ opened in your browser.
 * AUTH_USER_PASSWORD = 
 * AUTH_USER_NAME =
 * TEST_HOST = 
-* HOST = localhost
+* HOST =
 * REGISTRATION_URL = 
 * AUTHORIZATION_URL = 
 * AUTHORIZATION_PASSWORD_PAGE_URL = 
